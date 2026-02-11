@@ -1,2 +1,2 @@
 # JanonaP.github.io
-git add .
+title: Janona's Homepage
