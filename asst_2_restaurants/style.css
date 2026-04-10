@@ -1,0 +1,252 @@
+/* BASE STYLES - Students can modify and extend */
+:root {
+    --primary-color: #007cba;
+    --secondary-color: #0e1629;
+    --background-color: #cae0f7;
+    --card-background: #f9fbfd;
+    --text-color: #333;
+    --border-color: #dde5ef;
+    --shadow: 0 2px 4px rgba(21, 25, 105, 0.1);
+}
+
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: auto;
+    min-width: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    background: var(--background-color);
+    color: var(--text-color);
+    grid-template-areas: 
+    "header header header"
+    "button button button"
+    "display display display"
+    "footer footer footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.container {
+    max-width: auto;
+    margin: 0 auto;
+}
+
+.view-selector {
+    grid-area: button;
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.view-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.2s;
+}
+
+.view-button:hover {
+    background: #005a87;
+}
+
+.view-button.active {
+    background: var(--secondary-color);
+}
+
+.display-container {
+    grid-area: display;
+    max-width: auto;
+    min-width: 0 auto;
+    background: var(--card-background);
+    border-radius: 8px;
+    padding: 2rem;
+    min-height: 400px;
+    box-shadow: var(--shadow);
+    font-family: "Chiron GoRound TC", sans-serif;
+}
+
+.loading {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 2rem;
+}
+
+.error {
+    background: #fee;
+    border: 1px solid #fcc;
+    color: #c00;
+    padding: 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* UTILITY CLASSES FOR STUDENTS */
+.view-title {
+    margin: 0 0 1rem 0;
+    color: var(--text-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.view-description {
+    color: #666;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* CARD GRID LAYOUT */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.restaurant-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: var(--card-background);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* TABLE LAYOUT */
+.restaurant-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.restaurant-table th,
+.restaurant-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.restaurant-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.restaurant-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* CATEGORY GROUPS */
+.category-section {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.category-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.category-items {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.category-item {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+/* STATS LAYOUT */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+    color: white;
+    border-radius: 8px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.todo-implementation {
+    background: #fff3cd;
+    border: 2px dashed #ffc107;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    color: #856404;
+}
+
+.asst-box {
+    grid-area: footer;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.1rem;;
+}
+
+@media (min-width: 48rem) {
+  .header {grid-area: 1 / span 6;}
+  .button {grid-area: 2 / span 1;}
+  .display {grid-area: 3 / span 4;}
+  .footer {grid-area: 4 / span 6;}
+}
