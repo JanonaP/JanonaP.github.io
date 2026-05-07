@@ -1,0 +1,176 @@
+/* Root Variables */
+:root {
+    --primary-color: #480800;
+    --secondary-color: #28251F;
+    --accent-color: #7C1009;
+}
+
+/* Base styles */
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    background-image: url('./assets/mountains.jpg');
+    background-size: cover;
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+}
+
+.container {
+    margin: auto;
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "image image image"
+        "content content content"
+        "chart chart chart";
+    grid-template-columns: 1fr;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    font-family: "Gabriela", serif;
+    color: white;
+    grid-area: header;
+    background-color: black;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    height: 100vh;
+    align-items: center;
+}
+
+.scroll-instr {
+    padding: 2rem;
+}
+
+.container {
+    position: relative;
+}
+
+.sigil {
+    height: 200px;
+    width: 200px;
+    background-color: transparent;
+}
+
+.dragon-side {
+    position: absolute;
+    top: 100px; 
+    z-index: 10;
+}
+
+.dragon-side {
+    grid-area: image;
+    margin: auto;
+    top: 0;
+    z-index: 1;
+}
+
+/* Content styles */
+.fact-section {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400vh;
+}
+
+.small-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.seven {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.large-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.stark {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.large-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.daenerys {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+
+/* Chart styles */
+.display-container {
+    grid-area: chart;
+}
+
+canvas {
+    background-color: rgb(255, 255, 255);
+}
+
+.battle-title {
+    padding: 1rem;
+}
+
+/*general styles*/
+
+h2 {
+    font-family: "Gabriela", serif;
+    color: var(--secondary-color);
+}
+
+p {
+    color: var(--secondary-color);
+}
+
+@media (max-width: 48rem) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "content"
+      "image"
+      "chart";
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .dragon-side {
+    width: 120px;
+  }
+
+  .sigil {
+    width: 70px;
+  }
+}
